@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma de letras</title>
+    
+    <style>
+        body{
+            background-color: cadetblue;
+        }
+        h1{
+            color: darkblue;
+            margin-left: 3pt;
+        }
+        input{
+            border-style: double;
+            border-color: black;
+            margin-top: 10pt;
+            margin: 3pt;
+            font-size: x-large;
+        }
+       
+        div#res{
+            padding-top: 20pt;
+            margin: 3pt;
+            font: 20pt normal Arial;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1>Escreva seu texto</h1>
+    <input type="text" id="txt">
+    <input type="button" id="b1" value="Clique aqui" onclick="clicar()">
+    <div id="res">Resultado</div>
+    
+    <script>
+        function clicar(){
+            var texto = (document.querySelector('input#txt').value)
+            //texto.addEventListener('click', clicar)
+            const regex = /[0-9]/ //para verificar se tem numero
+            if (regex.test(texto)){
+                window.alert('Contem numero')
+            }
+            else{
+                var res = document.getElementById('res')
+                var soma = texto.replace(/ /g,"").length
+                res.innerText = `${texto} tem ${soma} letras.`
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,242 @@
+Aula5 07-06
+<div></div> => area de divisao
+<hgroup></hgroup> => agrupa titulos semelhantes
+<img src="LOCAL DA IMAGEM"> => a imagem tem que estar dentro da mesma pasta do meu projeto
+*****************************************************
+Aula6 
+<p></p> => usar paragrafos para quebrar linhas, melhor que <br/>
+&nbsp; => non=break space (um espaco em branco)
+<wbr/> => quebra de palavra sem hifen. Ex: super-humano -> super-<wbr/>humano
+&shy; => quebra de palavra com hifen
+
+Simbolos Especias:
+&copy; -> sempre comeca com & e termina com ;
+*****************************************************************
+Aula7
+Formatacao de textos
+<b></b> => bold
+<i></i> => italic
+<em></em> => enfase
+<u></u> => underline
+<s></s> => strike (riscado) | posso usar <del></del>
+text-indent: 50px; => tabulacao
+
+<span></span> => serve para editar texto em formato css. EX:
+<span style=text-decoration: underline; overline; none, etc etc></span>
+<span style=font-weight: normal; bold; bolder, 100, etc></span>
+
+alinhamento de texto
+style="text-align: center; left; justify;"
+
+<pre></pre> => todo espaco e enter sera considerado
+<code></code> => serve para escrever codigos
+
+Seletor de cores: download GIMP para formatps RGB(red, green ,blue)
+funcao url("LOCAL DO ARQUIVO") css
+
+nivel de tranparencia do texto:
+color: rgba(0,0,0,1)
+o ultimo numero refere-se a transparencia de 0 ate 1 (0.1, 0.2, 0.3...)
+********************************************************
+Aula9 08-06
+Imagens: 
+<img src="" alt=""/>
+src => pasta raiz do arquivo
+alt => texto alternativo
+formato PNG -> permite transparencia e melhor resolucao (maior que jpg)
+isso gera trafego maior, exige mais do processor
+
+como diminuir o arquivo de imagem: 
+width -> diminuir com width nao significa que diminui o tamanho
+melhor dimensionar o tamanho em pixels em um editor
+
+Download do GIMP, funciona como o photoshop
+quando editar imagens, salvar como web
+
+<figure> = melhor visualizar imagens e buscar
+    <img/>
+    <figcaption> => legenda para imagem
+        <h3>Glass</h3>
+        <p>Um copo muito louco</p>
+    </figcaption>
+</figure>
+*************************************************************
+Aula10
+estilo css para formatar imagens
+
+se usar class na tag, no css eu uso .
+se usar id na tag, no css eu uso #
+
+border: largura tipo cores
+
+position: relative -> posicao pai
+position: absolute -> posicao filho
+
+box-sizing: border-box; => cria um tamanho dentro da borda
+
+:hover => passar o mouse para aparecer
+transition: opacity 1s; => tempo que leva para aparecer
+
+container <nav></nav> => area de navegacao
+lista ordenada
+<ol type="a" start="3"> => lista tipo letras minusculas comecando em "c"
+</ol>
+
+lista desordenada
+<ul type="circle ou disc ou square">
+</ul>
+***************************************************************
+Aula12 - Links
+<a href=""http://www.google.com></a> -> abre na mesma aba ou
+<a href=""http://www.google.com target="_self"></a> 
+<a href=""http://www.google.com target="_blank"></a> -> abre em outra aba
+***************************************************************
+Aula13 - Menu com css
+ir na tag <nav></nav> onde esta meu menu e criar id
+no css, criar nav#menu li{
+    display: inline-block; // para deixar escrito lado a lado
+}
+padding => espaco fora do objeto
+margin => espcao dentro do objeto
+
+nav#menu{
+    display: block; // faz o container flutuar sobre a tela
+}
+
+posicao relativa eh soh dentro do meu container criado
+posicao absoluta posso ir em qualquer posicao do site
+
+display: none; => fazer sumir minha tag
+**************************************************************
+Aula14 - efeitos visuais
+no css, o efeito :hover faz com qualquer coisa que aconteca qdo passar o mouse
+nav#menu li:hover{} //passar o mouse para o li
+
+site: prefixr.com => copia e cola o codigo css para saber quais os codigos necessarios
+para funcionar em todos os webkits pra navegadores diferentes
+*************************************************************
+Aula15 - interface
+no html, a div id="interface" foi criada para deixar meu site dentro de um container
+div#interface{
+    width: 200px; //delimilito meu site em qualquer tamanho
+}
+
+Obs: o menu esta posicao absoluta, entao esta fora da div
+
+margin: cima direita baixo esquerda
+**************************************************
+Aula16 - formatar cabecalho
+
+border: espessura cor tipo(double, dotted, solid, dashed)
+imagem em css: url("Images/eu.jpeg") no-repeat lateral vertical;
+
+size: usar pt para texto e px para imagens
+
+todo objeto tem um padding(espaco interno) e margin(espaco externo)
+
+imagem nao eh background: url("imagem")
+*******************************************************
+Aula17 - fontes personalizadas css
+
+Para adicionar direto do google:
+usar o google.com/fonts
+adicionar o import no arquivo css parte superior e inserir font-family na tag 
+que voce deseja com o end do google fonts (copiar e colar)
+
+Para adicionar de uma pasta:
+na parte superior do arquivo css inserir
+@font-face{
+    font-family: 'nomeDaFonte';
+    src: url("local onde a pasta fonte se encontra");
+}
+
+font-weight: bold; => fonte negrito
+************************************************************
+Aula18 - tags section(secao) aside(conteudo lateral) footer(rodape)
+
+Divisao de areas:
+<section></section> => conteudo principal
+<aside></aside> => conteudo lateral secundario
+
+usar os objetos como display: block; para poder flutuar 
+tanto para esquerda ou direita
+
+footer#rodape{
+    clear: both; //usar pra deixar o rodape fora da divisao
+}
+
+Criar linhas que dividem as divisoes da interface:
+section#corpo {
+    border-right
+    border-left
+    border-top
+    border-bottom
+}
+aside#lateral {
+    border-right
+    border-left
+    border-top
+    border-bottom
+}
+************************************************************
+Aula19 - tabelas
+<table></table>
+titulo para a tabela => <caption></caption>
+linha => <tr></tr> 
+celula = dados para escrever dentro de cada linha => <td></td>
+
+Formatar tabelas
+posso centralizar objetos com margin-left e margin-right para auto
+border-spacing: 0px; //tirar espacamento entre celulas
+<td rowspan="2"></td> => para adicionar uma celula abaixo "2" => 2 linhas
+<td colspan=""></td> => para adicionar colunas
+vertical-align: top, bottom, middle
+*************************************************************
+Aula20 - tabela css
+Em HTML e CSS cada nao tem como ter varios objetos de mesmo id
+Para isso usamos class
+
+a classe sobrepoe o que foi definido antes
+****************************************************
+AULA21 - tag article
+podemos ter varios articles dentro de uma secao
+
+no css, quando inicia com ponto eh que todas as classes com o devido nomeDaFonte
+.direita {}
+*********************************************************
+AULA27 - iframes (um conteudo HTML dentro de outro)
+<iframe src="carregar documentos"></iframe>
+todo iframe tem um nomeDaFonte
+
+posso utilizar mais de um link para arquivos css =>
+tem isso no arquivo Explicacoes.html na area link para css
+
+@charset "UTF-8"; no css para acentuacao
+overflow: hidden => remover visualizacao do conteudo da rolagem
+
+iframe#frame-spec::-webkit-scrollbar { => para esconder as barras de rolagem
+    display: none;
+}
+****************************************************************
+Aula 28 - mapa de imagem (areas que posso clicar em uma imagem)
+
+e bom criar <map> </map> logo apos a imagem a ser mapeada
+criar name para o map => <map name="meumapa"> </map>
+escrever nome do mapa dentro da tag img => <img usemap="#meumapa"> para usar o map criado
+criar areas dentro da tag map
+dentro de <area> existem os shape (circle/retangular/poligonal)
+preciso de coords feitos dentro de um editor de imagens
+ <map> 
+     <area shape="rect" coords="x1,y1,x2,y2" href="arquivo html#id da tag que quero" target="id de onde sera aberto"/>
+ </map>
+
+No editor de imgens, achar a paleta de informacoes (que mostra as coordenadas de onde o cursor para dentro da imagem)
+dentro de coords="", separar os numeros por virgula:
+se a area for retangular, os 2 primeiros numeros equivalem a uma ponta e os 2 ultimos numeros equivalem a outra ponta do retangulo que selecionei na imagem
+No Gimp, selecionar de forma retangular a imagem a ser usada e marcar os valores do canto superior esquerdo (x1,y1) e canto inferior direito (x2,y2)
+
+no href="", e o arquivo a ser usado - pode ser qualquer coisa, inclusive uma tag do meu arquivo html
+
+coordenadas de um shape="circle" => x e y do centro da imagem selecionada de forma circular, depois o valor da largura e altura (que e o mesmo por ser um circulo) dividido por 2, ou seja, o raio
+
+
